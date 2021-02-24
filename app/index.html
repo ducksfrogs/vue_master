@@ -33,6 +33,15 @@
         <h1>{{ product }} gose here</h1>
         <p v-if='inStock'>in stock</p>
         <p v-else>Out stock</p>
+        <ul>
+          <li v-for="detail in details">{{ detail }}</li>
+        </ul>
+
+        <div v-for="variant in variants" :key="variant.variantId">
+          <p @mouseover="updateProduct(variant.variantImage)">{{ variant.variantColor}}</p>
+        </div>
+        <button v-on:click="addToCart"type="button" name="button">Add to Cart</button>
+        <div><p>{{ cart }}</p></div>
       </div>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
